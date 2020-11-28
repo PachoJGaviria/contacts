@@ -1,4 +1,4 @@
-import type { AwsFunction, Serverless } from 'serverless/aws';
+import type { AwsFunction, Serverless } from 'serverless/aws'
 
 const serverlessConfiguration: Serverless = {
   service: {
@@ -311,4 +311,4 @@ const serverlessConfiguration: Serverless = {
   }
 }
 
-module.exports = serverlessConfiguration;
+module.exports = serverlessConfiguration

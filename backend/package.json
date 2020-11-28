@@ -1,17 +1,17 @@
 {
   "name": "contacts",
   "version": "1.0.0",
-  "description": "Serverless webpack using Typescript - Backend Contacts Application ",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Serverless webpack using Typescript - Backend Contacts Application",
   "dependencies": {
-    "source-map-support": "^0.5.19"
+    "source-map-support": "^0.5.19",
+    "uuid": "^8.3.1",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.64",
     "@types/node": "^14.14.6",
     "@types/serverless": "^1.78.8",
+    "@types/uuid": "^8.3.0",
     "fork-ts-checker-webpack-plugin": "^6.0.0",
     "serverless-iam-roles-per-function": "^3.0.0-d84bffd",
     "serverless-plugin-canary-deployments": "^0.4.8",
