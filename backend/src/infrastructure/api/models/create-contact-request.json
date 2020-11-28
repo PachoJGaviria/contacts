@@ -18,7 +18,6 @@
       "type": "string",
       "title": "The name schema",
       "minLength": 3
-
     },
     "phone": {
       "type": "string",

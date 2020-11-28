@@ -20,4 +20,8 @@ export class Contact {
   static create(contactId: ContactId, userId: UserId, name: ContactName, phone: ContactPhone) {
     return new Contact(contactId, userId, name, phone)
   }
+  
+  static update(contactId: ContactId, userId: UserId, name: ContactName, phone: ContactPhone) {
+    return new Contact(contactId, userId, name, phone)
+  }
 }

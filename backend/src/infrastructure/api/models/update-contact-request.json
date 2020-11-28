@@ -13,7 +13,7 @@
       "minLength": 3
     },
     "phone": {
-      "type": "integer",
+      "type": "string",
       "title": "The phone schema",
       "minLength": 10,
       "maxLength": 10
