@@ -35,7 +35,7 @@ const createContactController: APIGatewayProxyHandler = async (event: APIGateway
   )
   return {
     statusCode: 201,
-    body: 'OK'
+    body: 'CREATED'
   }
 }
 

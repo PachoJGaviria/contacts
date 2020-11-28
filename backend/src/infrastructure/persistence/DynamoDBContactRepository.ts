@@ -24,6 +24,15 @@ export class DynamoDBContactRepository implements ContactRepository {
     private readonly contactTable = process.env.CONTACTS_TABLE,
     private readonly contactUserIndex = process.env.CONTACTS_USER_INDEX) {
   }
+  
+  async delete(contactId: ContactId, userId: UserId): Promise<void> {
+    logger.info(`Delete a contact with contactId: ${contactId.id} userId: ${userId.id}`)
+    await this.dynamoDBDocClient.delete({
+      TableName: this.contactTable,
+      Key: { contactId: contactId.id, userId: userId.id }
+    }).promise()  
+  }
+
   async getContactsBy(userId: UserId): Promise<Contact[]> {
     logger.info(`Get all contacts by user ${userId}`)
 
