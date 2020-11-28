@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Create contact schema",
+  "required": [
+    "contactId",
+    "name",
+    "phone"
+  ],
+  "properties": {
+    "contactId": {
+      "type": "string",
+      "title": "The contactId schema"
+    },
+    "name": {
+      "type": "string",
+      "title": "The name schema"
+    },
+    "phone": {
+      "type": "integer",
+      "title": "The phone schema"
+    },
+    "email": {
+      "type": "string",
+      "title": "The email schema"
+    },
+    "notes": {
+      "type": "string",
+      "title": "The notes schema"
+    }
+  },
+  "additionalProperties": false
+}
