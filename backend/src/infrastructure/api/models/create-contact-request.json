@@ -10,23 +10,21 @@
   "properties": {
     "contactId": {
       "type": "string",
-      "title": "The contactId schema"
+      "title": "The contactId schema",
+      "minLength": 36,
+      "maxLength": 36
     },
     "name": {
       "type": "string",
-      "title": "The name schema"
+      "title": "The name schema",
+      "minLength": 3
+
     },
     "phone": {
-      "type": "integer",
-      "title": "The phone schema"
-    },
-    "email": {
       "type": "string",
-      "title": "The email schema"
-    },
-    "notes": {
-      "type": "string",
-      "title": "The notes schema"
+      "title": "The phone schema",
+      "minLength": 10,
+      "maxLength": 10
     }
   },
   "additionalProperties": false

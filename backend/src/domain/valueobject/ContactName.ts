@@ -5,7 +5,7 @@ import { createLogger } from '../../util/logger'
 const logger = createLogger('ContactId')
 
 export class ContactName {
-  readonly name: string
+  readonly value: string
 
   constructor (contactName: string){
     if (!contactName) {
@@ -14,6 +14,6 @@ export class ContactName {
     if (!contactName.match(/^[a-zA-Z0-9 .-]+$/)) {
       throw new IllegalArgumentError('The contact name is not a safe text.', logger)
     }
-    this.name = contactName
+    this.value = contactName
   }
 }

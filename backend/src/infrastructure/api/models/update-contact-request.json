@@ -3,7 +3,8 @@
   "type": "object",
   "title": "Update contact schema",
   "required": [
-    "name"
+    "name",
+    "phone"
   ],
   "properties": {
     "name": {
@@ -16,14 +17,6 @@
       "title": "The phone schema",
       "minLength": 10,
       "maxLength": 10
-    },
-    "email": {
-      "type": "string",
-      "title": "The email schema"
-    },
-    "notes": {
-      "type": "string",
-      "title": "The notes schema"
     }
   },
   "additionalProperties": false

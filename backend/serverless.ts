@@ -112,7 +112,8 @@ const serverlessConfiguration: Serverless = {
         {
           Effect: 'Allow',
           Action: [
-            'dynamodb:PutItem'
+            'dynamodb:PutItem',
+            'dynamodb:Query'
           ],
           Resource: 'arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.CONTACTS_TABLE}'
         }
