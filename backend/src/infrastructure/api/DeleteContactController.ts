@@ -22,7 +22,7 @@ const DeleteContactsController: APIGatewayProxyHandler = async (event: APIGatewa
   await deleteContact.delete(new ContactId(contactId), new UserId(userId))
   return {
     statusCode: 200,
-    body: 'DELETED'
+    body: JSON.stringify({message: 'DELETED'})
   }
 } 
 

@@ -8,6 +8,6 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
   console.log(contactId, userId)
   return {
     statusCode: 200,
-    body: 'This the generate signed url contact endpoint'
+    body: JSON.stringify({message: 'This the generate signed url contact endpoint'})
   }
 } 
