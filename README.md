@@ -2,11 +2,13 @@
 Manage your contacts list with this serverless app
 
 ## Architecture
+- ![Architecture](.docs/Contact-book-AWS.png?raw=true "Contact Book Architecture")
 - This is the [Architecture](https://drive.google.com/file/d/18_4vpUoF5IPFx1oDanFdyijWrWXnskPQ/view?usp=sharing)
 - This is a monorepo application. The frontend is power by Angular and the backend with serverless framework
 
 ### Features
 - CRUD Contact by user
+- Frontend (Angular app)
 - Upload photo to any Contact and display it to the user
 - Only authenticated user can use the application
 - Less permissions by lambda
