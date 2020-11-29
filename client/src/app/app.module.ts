@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { AuthButtonComponent } from './auth/auth-button.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ContactDetailComponent } from './contact-detail/contact-detail.componen
     ContactsComponent,
     AuthButtonComponent,
     UserProfileComponent,
-    ContactDetailComponent
+    ContactDetailComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

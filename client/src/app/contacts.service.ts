@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
 import { Contact } from './models/Contact';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +11,10 @@ export class ContactsService {
 
   getAllContacts(): Promise<Contact[]> {
     return this.http.get<Contact[]>(`${environment.apiUrl}contacts`).toPromise();
+  }
+
+  deleteContact(contactId: string): Promise<object> {
+    return this.http.delete<object>(`${environment.apiUrl}contacts/${contactId}`).toPromise();
   }
 
   saveContact(contact: Contact): Promise<object> {
