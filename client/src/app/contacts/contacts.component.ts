@@ -31,21 +31,4 @@ export class ContactsComponent implements OnInit {
   onSelect(contact: Contact): void {
     this.selectContact = contact;
   }
-
-  async onSubmit(): Promise<void> {
-    try {
-      if (this.selectContact) {
-        await this.contactsService.saveContact(this.selectContact);
-        alert('Contact saved');
-      }
-    } catch (error) {
-      const message = error?.error || 'Something failed in the backend!! :('
-      alert(`${message} - Status: ${error.status}`);
-    }
-  }
-
-  back(): void {
-    console.log("back...")
-  }
-
 }

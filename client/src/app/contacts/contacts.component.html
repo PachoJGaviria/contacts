@@ -8,33 +8,6 @@
     </ul>
   </div>
   <div class="col-md-6 contact">
-    <app-contact-detail [contact]="selectContact"></app-contact-detail>
+    <app-contact-detail *ngIf="selectContact" [contact]="selectContact"></app-contact-detail>
   </div>
 </div>
-
-
-<!--
-<form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" required minlength="3" [(ngModel)]="contact.name" name="name"
-      #name="ngModel">
-    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-      Name is required and min length 3
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="phone">Phone</label>
-    <input type="number" class="form-control" id="phone" required min="3000000000" max="3999999999"
-      [(ngModel)]="contact.phone" name="phone" #phone="ngModel">
-    <div [hidden]="phone.valid || phone.pristine" class="alert alert-danger">
-      Phone is required and length 10
-    </div>
-  </div>
-  <div class="action">
-    <button type="button" class="btn btn-light" (click)="back()">Back</button>
-    <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">Save</button>
-  </div>
-</form>
--->

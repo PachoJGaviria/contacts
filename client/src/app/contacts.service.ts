@@ -17,7 +17,11 @@ export class ContactsService {
     return this.http.delete<object>(`${environment.apiUrl}contacts/${contactId}`).toPromise();
   }
 
-  saveContact(contact: Contact): Promise<object> {
-    return this.http.post<object>(`${environment.apiUrl}contacts`, contact).toPromise();
+  saveContact(contact: Contact, newContact: boolean): Promise<object> {
+    if (newContact) {
+      return this.http.post<object>(`${environment.apiUrl}contacts`, contact).toPromise();
+    }
+    const { contactId, ...updateContact } = contact
+    return this.http.patch<object>(`${environment.apiUrl}contacts/${contactId}`, updateContact).toPromise();
   }
 }

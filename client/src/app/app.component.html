@@ -3,6 +3,7 @@
     <h1>{{title}}</h1>
     <a class="nav-link" *ngIf="auth.isAuthenticated$ | async" routerLink="/dashboard">Dashboard</a>
     <a class="nav-link" *ngIf="auth.isAuthenticated$ | async" routerLink="/contacts">Contacts</a>
+    <a class="nav-link" *ngIf="auth.isAuthenticated$ | async" routerLink="/contact">New Contact</a>
     <app-login-button></app-login-button>
   </nav>
   <app-user-profile></app-user-profile>
