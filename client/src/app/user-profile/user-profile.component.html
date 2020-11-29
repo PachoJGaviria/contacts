@@ -1,0 +1,4 @@
+<div class="navbar-text user-info" *ngIf="auth.user$ | async as user">
+  Hi {{ user.name }}<br>
+  {{ user.email }}
+</div>
