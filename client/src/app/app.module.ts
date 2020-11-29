@@ -21,7 +21,7 @@ import { ContactDetailComponent } from './contact-detail/contact-detail.componen
     ContactDetailComponent
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
