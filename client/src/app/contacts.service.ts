@@ -10,8 +10,11 @@ import { Contact } from './models/Contact';
   providedIn: 'root'
 })
 export class ContactsService {
-
   constructor(private http: HttpClient) { }
+
+  getAllContacts(): Promise<Contact[]> {
+    return this.http.get<Contact[]>(`${environment.apiUrl}contacts`).toPromise();
+  }
 
   saveContact(contact: Contact): Promise<object> {
     return this.http.post<object>(`${environment.apiUrl}contacts`, contact).toPromise();

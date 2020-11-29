@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Contact } from '../models/Contact';
 import { ContactsService } from '../contacts.service';
-import { HttpErrorResponse } from '@angular/common/http';
+import { Contact } from '../models/Contact';
 
 @Component({
   selector: 'app-contacts',
@@ -10,24 +9,36 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class ContactsComponent implements OnInit {
 
-  contact: Contact = {
-    contactId: 'aec729c4-57c2-4788-809e-d1b36f0173fb',
-    name: 'Mochi',
-    phone: '3007118899'
-  };
+  contacts: Contact[] = [];
+
+  selectContact: Contact | undefined = undefined;
 
   constructor(private readonly contactsService: ContactsService) { }
 
   ngOnInit(): void {
+    this.loadContacts()
+  }
+
+  async loadContacts(): Promise<void> {
+    try {
+      this.contacts = await this.contactsService.getAllContacts();
+    } catch (error) {
+      const message = error?.error || 'Something failed in the backend!! :('
+      alert(`${message} - Status: ${error.status}`);
+    }
+  }
+
+  onSelect(contact: Contact): void {
+    this.selectContact = contact;
   }
 
   async onSubmit(): Promise<void> {
     try {
-      const response = await this.contactsService.saveContact(this.contact);
-      console.info(response);
-      alert('Contact saved');
+      if (this.selectContact) {
+        await this.contactsService.saveContact(this.selectContact);
+        alert('Contact saved');
+      }
     } catch (error) {
-      console.error(error);
       const message = error?.error || 'Something failed in the backend!! :('
       alert(`${message} - Status: ${error.status}`);
     }

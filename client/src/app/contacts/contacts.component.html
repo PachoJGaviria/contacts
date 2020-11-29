@@ -1,6 +1,23 @@
-<h2>{{contact.name | uppercase}} Details</h2>
-<h6><span>id: </span>{{contact.contactId}}</h6>
+<div class="row">
+  <div class="col-md-6">
+    <h2>My Contacts</h2>
+    <ul class="contacts">
+      <li class="row" [class.selected]="contact == selectContact" *ngFor="let contact of contacts" (click)="onSelect(contact)">
+        <span class="col-md-4 badge">{{contact.name}}</span><span class="col-md-6">{{contact.phone}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="selectContact" class="contact">
+      <h4>{{selectContact.name | uppercase}} Details</h4>
+      <h6><span>id: </span>{{selectContact.contactId}}</h6>
+      <h6><span>phone: </span>{{selectContact.phone}}</h6>
+    </div>
+  </div>
+</div>
 
+
+<!--
 <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
   <div class="form-group">
     <label for="name">Name</label>
@@ -24,3 +41,4 @@
     <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">Save</button>
   </div>
 </form>
+-->
