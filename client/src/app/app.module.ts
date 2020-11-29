@@ -10,13 +10,15 @@ import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
 import { environment } from '../environments/environment';
 import { AuthButtonComponent } from './auth/auth-button.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactsComponent,
     AuthButtonComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ContactDetailComponent
   ],
   imports: [
   BrowserModule,
