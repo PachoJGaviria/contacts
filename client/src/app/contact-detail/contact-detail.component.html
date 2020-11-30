@@ -16,8 +16,13 @@
       Phone is required and it should be a valid phone
     </div>
   </div>
+
+  <div *ngIf="!newContact" class="form-group">
+    <app-upload-file [contactId]="contact.contactId"></app-upload-file>
+  </div>
+
   <div class="action">
-    <button type="button" class="btn btn-light" (click)="back()">Back</button>
+    <button type="button" class="btn btn-light" (click)="cancel()">Cancel</button>
     <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">Save</button>
   </div>
 </form>

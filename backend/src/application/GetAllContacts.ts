@@ -1,8 +1,5 @@
 import 'source-map-support/register'
 import { Contact } from '../domain/Contact'
-import { ContactId } from '../domain/valueobject/ContactId'
-import { ContactName } from '../domain/valueobject/ContactName'
-import { ContactPhone } from '../domain/valueobject/ContactPhone'
 import { UserId } from '../domain/valueobject/UserId'
 import { ContactRepository } from '../domain/ContactRepository'
 import { createLogger } from '../util/logger'
@@ -18,7 +15,7 @@ export class GetAllContacts {
   }
 
   async getAllContacts(userId: UserId): Promise<Contact[]> {
-    logger.info(`Get All contacts by UserId: ${userId}`)
+    logger.info(`Get All contacts by UserId: ${userId.id}`)
     return await this.contactRepository.getContactsBy(userId)
   }
 
