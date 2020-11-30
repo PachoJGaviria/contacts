@@ -18,16 +18,18 @@ const getAllContacts = new GetAllContacts(contactRepository)
 
 const GetAllContactsController: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   const userId = await getUserId(event)
-  logger.info(`Get all Contacts: User id: ${userId}`)
+  logger.info(`Get all Contacts by User id: ${userId}`)
   const contacts = (await getAllContacts
   .getAllContacts(new UserId(userId)))
   .map(contact => {
     return {
       contactId: contact.contactId.id,
       name: contact.name.value,
-      phone: contact.phone.value
+      phone: contact.phone.value,
+      photo: contact.photoUrl
     }
   })
+  logger.info(`Contacts by user id ${userId} - ${JSON.stringify(contacts)}`)
   return {
     statusCode: 200,
     body: JSON.stringify(contacts)

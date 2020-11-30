@@ -12,6 +12,7 @@ import { AuthButtonComponent } from './auth/auth-button.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UploadFileComponent } from './upload-file/upload-file.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AuthButtonComponent,
     UserProfileComponent,
     ContactDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    UploadFileComponent
   ],
   imports: [
     BrowserModule,

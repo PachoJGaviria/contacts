@@ -177,7 +177,7 @@ const serverlessConfiguration: Serverless = {
     } as unknown) as AwsFunction,
   
     GenerateSignedUrl: ({
-      handler: 'src/infrastructure/api/GenerateSignedUrl.handler',
+      handler: 'src/infrastructure/api/GetSignedUrlForContactPhotoController.handler',
       events: [
         {
           http: {

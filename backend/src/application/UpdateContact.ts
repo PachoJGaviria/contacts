@@ -5,7 +5,6 @@ import { ContactName } from '../domain/valueobject/ContactName'
 import { ContactPhone } from '../domain/valueobject/ContactPhone'
 import { UserId } from '../domain/valueobject/UserId'
 import { ContactRepository } from '../domain/ContactRepository'
-import { ContactAlreadyExistsError } from '../domain/errors/ContactAlreadyExistsError';
 import { createLogger } from '../util/logger'
 
 const logger = createLogger('UpdateContact')

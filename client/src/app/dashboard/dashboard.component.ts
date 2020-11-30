@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Contact } from '../models/Contact';
+import { Contact } from '../models/Contact.models';
 import { ContactsService } from '../contacts.service';
 
 @Component({

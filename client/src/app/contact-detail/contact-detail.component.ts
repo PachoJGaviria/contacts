@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Contact } from '../models/Contact';
 import { ContactsService } from '../contacts.service';
 import { v4 as uuidv4 } from 'uuid';
 import { Router } from '@angular/router';
+import { Contact } from '../models/Contact.models';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class ContactDetailComponent implements OnInit {
 
   @Input() contact: Contact;
 
-  newContact: boolean = false;
+  newContact: boolean = true;
 
   phonePattern: string = '^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$'
 
@@ -48,8 +48,7 @@ export class ContactDetailComponent implements OnInit {
     }
   }
 
-  back(): void {
-    console.log("back...")
+  cancel(): void {
+    this.router.navigate(['/dashboard'])
   }
-
 }
