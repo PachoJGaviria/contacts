@@ -15,14 +15,14 @@ const contactRepository = new DynamoDBContactRepository()
 const deleteContact = new DeleteContact(contactRepository)
 
 const DeleteContactsController: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
-  const userId = getUserId(event)
+  const userId = await getUserId(event)
   const contactId = event.pathParameters.contactId
 
   logger.info(`Delete contacts: Contact id: ${contactId} - User id: ${userId}`)
   await deleteContact.delete(new ContactId(contactId), new UserId(userId))
   return {
     statusCode: 200,
-    body: 'DELETED'
+    body: JSON.stringify({message: 'DELETED'})
   }
 } 
 

@@ -4,10 +4,10 @@ import { getUserId } from '../authorization/Auth0Authorizer'
 
 export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   const contactId = event.pathParameters.contactId
-  const userId = getUserId(event)
+  const userId = await getUserId(event)
   console.log(contactId, userId)
   return {
     statusCode: 200,
-    body: 'This the generate signed url contact endpoint'
+    body: JSON.stringify({message: 'This the generate signed url contact endpoint'})
   }
 } 

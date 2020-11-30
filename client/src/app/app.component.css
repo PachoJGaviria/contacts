@@ -1,0 +1,20 @@
+h1 {
+  color: #336699;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 150%;
+}
+h2, h3 {
+  color: #444444;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: lighter;
+}
+body {
+  margin: 5rem;
+}
+body, input[type="text"], button {
+  color: #333333;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+* {
+  font-family: 'Courier New', Courier, monospace;
+}

@@ -23,7 +23,7 @@ interface CreateContactRequest {
 }
 
 const createContactController: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
-  const userId = getUserId(event)
+  const userId = await getUserId(event)
   const newContact: CreateContactRequest = JSON.parse(event.body)
   logger.info(`Create a new Contact: User id: ${userId} - info:  ${JSON.stringify(newContact)}`)
 
@@ -35,7 +35,7 @@ const createContactController: APIGatewayProxyHandler = async (event: APIGateway
   )
   return {
     statusCode: 201,
-    body: 'CREATED'
+    body: JSON.stringify({message: 'CREATED'})
   }
 }
 

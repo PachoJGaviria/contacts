@@ -1,0 +1,48 @@
+h6 {
+  font-size: 80%;
+}
+label {
+  font-weight: bold;
+}
+button {
+  margin: auto 0.5rem;
+}
+.contacts {
+  margin: 0 2;
+  list-style-type: none;
+  padding: 0;
+  width: 20rem;
+}
+.contacts li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #eeeeee;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+.contacts li:hover {
+  color: #607d8b;
+  background-color: #dddddd;
+  left: .1rem;
+}
+.contacts li.selected {
+  background-color: #cfd8dc;
+  color: gray;
+}
+.contacts li.selected:hover {
+  background-color: #bbd8dc;
+  color: white;
+}
+.contacts .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  background-color:#405061;
+  padding: 0.4rem;
+}
+
+.contact {
+  padding: 3rem 0;
+}

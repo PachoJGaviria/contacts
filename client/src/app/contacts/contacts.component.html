@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-6">
+    <h2>My Contacts</h2>
+    <ul class="contacts">
+      <li class="row" [class.selected]="contact == selectContact" *ngFor="let contact of contacts" (click)="onSelect(contact)">
+        <span class="col-md-4 badge">{{contact.name}}</span><span class="col-md-6">{{contact.phone}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6 contact">
+    <app-contact-detail *ngIf="selectContact" [contact]="selectContact"></app-contact-detail>
+  </div>
+</div>
