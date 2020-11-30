@@ -5,7 +5,6 @@ import middy from '@middy/core'
 import cors from '@middy/http-cors'
 import httpErrorHandler from '@middy/http-error-handler'
 import { GetAllContacts } from '../../application/GetAllContacts'
-import { Contact } from '../../domain/Contact'
 import { createLogger } from '../../util/logger'
 import { DynamoDBContactRepository } from '../persistence/DynamoDBContactRepository';
 import { UserId } from '../../domain/valueobject/UserId'
@@ -18,7 +17,7 @@ const getAllContacts = new GetAllContacts(contactRepository)
 
 
 const GetAllContactsController: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
-  const userId = getUserId(event)
+  const userId = await getUserId(event)
   logger.info(`Get all Contacts: User id: ${userId}`)
   const contacts = (await getAllContacts
   .getAllContacts(new UserId(userId)))

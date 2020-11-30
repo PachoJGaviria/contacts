@@ -22,7 +22,7 @@ interface UpdateContactRequest {
 }
 
 const createContactController: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
-  const userId = getUserId(event)
+  const userId = await getUserId(event)
   const contactId = event.pathParameters.contactId
   const updateContactInfo: UpdateContactRequest = JSON.parse(event.body)
   logger.info(`Update a Contact: Contact id: ${contactId} User id: ${userId} - info:  ${JSON.stringify(updateContactInfo)}`)
